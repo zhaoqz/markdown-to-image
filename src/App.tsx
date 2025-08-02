@@ -1,13 +1,22 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from './packages'
 // import './App.css'
 
 function App() {
   const markdownRef = useRef<any>(null);
+  
+  useEffect(() => {
+    console.log('App 组件已加载');
+    console.log('markdownRef:', markdownRef.current);
+  }, []);
  
   const handleCopy = () => {
+    console.log('尝试复制图片...');
     markdownRef?.current?.handleCopy().then((res) => {
+      console.log('复制成功，结果:', res);
       alert('promise copy')
+    }).catch(err => {
+      console.error('复制失败:', err);
     });
   };
   const copySuccessCallback = () => {

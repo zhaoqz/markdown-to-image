@@ -1,0 +1,155 @@
+/* 主题样式定义 */
+
+/* 字体大小样式 */
+.font-size-sm .prose {
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.25rem;
+}
+
+.font-size-base .prose {
+  font-size: 1rem; /* text-base */
+  line-height: 1.5rem;
+}
+
+.font-size-lg .prose {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+}
+
+.font-size-xl .prose {
+  font-size: 1.25rem; /* text-xl */
+  line-height: 1.75rem;
+}
+
+/* 内边距样式 - 控制背景图片和内部白色底框的间距 */
+.poster-padding-0 > div > div { padding: 0rem !important; }
+.poster-padding-1 > div > div { padding: 0.25rem !important; }
+.poster-padding-2 > div > div { padding: 0.5rem !important; }
+.poster-padding-3 > div > div { padding: 0.75rem !important; }
+.poster-padding-4 > div > div { padding: 1rem !important; }
+.poster-padding-5 > div > div { padding: 1.25rem !important; }
+.poster-padding-6 > div > div { padding: 1.5rem !important; }
+.poster-padding-7 > div > div { padding: 1.75rem !important; }
+.poster-padding-8 > div > div { padding: 2rem !important; }
+
+/* 滑块样式 */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #d1d5db;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 基础主题 */
+.theme-base .prose {
+  font-family: sans-serif;
+  color: #27272a; /* text-zinc-800 */
+}
+
+.theme-base .prose h1,
+.theme-base .prose h2,
+.theme-base .prose h3,
+.theme-base .prose h4,
+.theme-base .prose h5,
+.theme-base .prose h6 {
+  color: #27272a; /* text-zinc-800 */
+}
+
+/* 经典主题 */
+.theme-classic .prose {
+  font-family: serif;
+  color: #3f3f46; /* text-zinc-700 */
+}
+
+.theme-classic .prose h1,
+.theme-classic .prose h2,
+.theme-classic .prose h3,
+.theme-classic .prose h4,
+.theme-classic .prose h5,
+.theme-classic .prose h6 {
+  color: #3f3f46; /* text-zinc-700 */
+}
+
+.theme-classic .prose strong {
+  color: #991b1b; /* text-red-800 */
+}
+
+.theme-classic .prose em {
+  color: #030712; /* text-gray-950 */
+  background-color: rgba(3, 7, 18, 0.1); /* bg-gray-950/10 */
+}
+
+.theme-classic .prose blockquote {
+  color: #3f3f46; /* text-zinc-700 */
+  background-color: rgba(212, 212, 216, 0.5); /* bg-gray-300/50 */
+  padding: 0.25rem; /* p-1 */
+}
+
+.theme-classic .prose img {
+  border-radius: 0; /* rounded-none */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+/* 活力主题 */
+.theme-vibrant .prose {
+  font-family: sans-serif;
+  color: #404040; /* text-neutral-700 */
+}
+
+.theme-vibrant .prose h1,
+.theme-vibrant .prose h2,
+.theme-vibrant .prose h3,
+.theme-vibrant .prose h4,
+.theme-vibrant .prose h5,
+.theme-vibrant .prose h6 {
+  color: #404040; /* text-neutral-700 */
+}
+
+.theme-vibrant .prose strong {
+  text-decoration: wavy underline;
+  text-decoration-color: #f87171; /* decoration-red-400 */
+  background-color: rgba(248, 113, 113, 0.4); /* bg-red-400/40 */
+}
+
+.theme-vibrant .prose em {
+  color: #0a0a0a; /* text-neutral-950 */
+  background-color: rgba(250, 204, 21, 0.5); /* bg-yellow-400/50 */
+}
+
+.theme-vibrant .prose blockquote {
+  font-style: normal; /* not-italic */
+  border-left: 0; /* border-l-0 */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+  border-right: 4px solid rgba(0, 0, 0, 0.5); /* border-r-4 border-black/50 */
+  border-bottom: 4px solid rgba(0, 0, 0, 0.5); /* border-b-4 border-black/50 */
+  background-color: rgba(38, 38, 38, 0.05); /* bg-neutral-800/5 */
+  color: #171717; /* text-neutral-900 */
+  border-radius: 1rem; /* rounded-2xl */
+  padding-top: 0.25rem; /* py-1 */
+  padding-bottom: 0.25rem; /* py-1 */
+  padding-left: 1.25rem; /* pl-5 */
+  padding-right: 0.5rem; /* pr-2 */
+}
