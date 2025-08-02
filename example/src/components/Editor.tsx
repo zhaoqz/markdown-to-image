@@ -173,20 +173,69 @@ export default function Editor() {
   const [isClient, setIsClient] = useState(false)
   
   // 海报固定要素状态
-  const [title, setTitle] = useState('今日推荐')
-  const [author, setAuthor] = useState('@Nickname')
+  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
   const [showDate, setShowDate] = useState(false)
-  const [brandInfo, setBrandInfo] = useState('由 ReadPo 提供支持')
+  const [brandInfo, setBrandInfo] = useState('')
   const [copyright, setCopyright] = useState('')
   const [theme, setTheme] = useState('SpringGradientWave')
   const [typographyTheme, setTypographyTheme] = useState('base') // 'base', 'classic', 'vibrant'
   const [fontSize, setFontSize] = useState('base') // 'sm', 'base', 'lg', 'xl'
   const [padding, setPadding] = useState(6) // 0-8
   
-  // 使用 useEffect 确保只在客户端执行
+  // 使用 useEffect 确保只在客户端执行并加载配置
   useEffect(() => {
     setIsClient(true)
+    loadConfiguration()
   }, [])
+
+  // 保存配置到本地存储
+  const saveConfiguration = () => {
+    const config = {
+      title,
+      author,
+      showDate,
+      brandInfo,
+      copyright,
+      theme,
+      typographyTheme,
+      fontSize,
+      padding,
+      mdString
+    }
+    localStorage.setItem('markdown-to-image-config', JSON.stringify(config))
+  }
+
+  // 从本地存储加载配置
+  const loadConfiguration = () => {
+    try {
+      const savedConfig = localStorage.getItem('markdown-to-image-config')
+      if (savedConfig) {
+        const config = JSON.parse(savedConfig)
+        setTitle(config.title || '')
+        setAuthor(config.author || '')
+        setShowDate(config.showDate || false)
+        setBrandInfo(config.brandInfo || '')
+        setCopyright(config.copyright || '')
+        setTheme(config.theme || 'SpringGradientWave')
+        setTypographyTheme(config.typographyTheme || 'base')
+        setFontSize(config.fontSize || 'base')
+        setPadding(config.padding || 6)
+        if (config.mdString) {
+          setMdString(config.mdString)
+        }
+      }
+    } catch (error) {
+      console.error('加载配置失败:', error)
+    }
+  }
+
+  // 监听配置变化并自动保存
+  useEffect(() => {
+    if (isClient) {
+      saveConfiguration()
+    }
+  }, [title, author, showDate, brandInfo, copyright, theme, typographyTheme, fontSize, padding, mdString, isClient])
   
   // 复制到剪贴板功能
   const handleCopyToClipboard = () => {

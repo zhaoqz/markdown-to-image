@@ -15,8 +15,8 @@ export default function Footer() {
       <p
         className="px-6 py-3 rounded-full flex justify-center items-center gap-2"
       >
-        <span>© 2024</span>
-        <Link href="https://github.com/gcui-art/markdown-to-image/">gcui-art/markdown-to-image</Link>
+        <span>基于 gcui-art/markdown-to-image 修改，欢迎原作者作品：</span>
+        <Link href="https://readpo.com/">https://readpo.com/</Link>
       </p>
     </footer>
   )
